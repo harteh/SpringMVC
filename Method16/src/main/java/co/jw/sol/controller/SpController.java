@@ -55,20 +55,20 @@ public class SpController {
 	// public String test1(HttpServletRequest request) {
 	public String test1(HttpSession session) {
 		//HttpSession session = request.getSession();
-		session.setAttribute("d1", "의영");
+		session.setAttribute("d1", "session1");
 		
 		return "t1";
 	}
 	
 	@GetMapping("/t2")
 	public String test2(HttpSession session) {
-		session.setAttribute("d1", "민우");
+		session.setAttribute("d1", "session2");
 		return "redirect:/final1";
 	}
 	
 	@GetMapping("/t3")
 	public String test3(HttpSession session) {
-		session.setAttribute("d1", "현민");
+		session.setAttribute("d1", "session3");
 		return "forward:/final1";
 	}
 	

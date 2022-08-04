@@ -15,6 +15,7 @@ public class SpController {
 	
 	@GetMapping("/t1")
 	public String a1(HttpServletRequest request) {
+	// HttpServletRequest : Spring MVC는 jsp 를 처리할 때 HttpServletRequest 객체를 jsp 쪽으로 전달한다
 		request.setAttribute("d1", "의영");
 		return "forward:/final1";
 	}
@@ -53,7 +54,6 @@ public class SpController {
 		
 		return mv;
 	}
-	
 	@GetMapping("/final3")
 	public String f3(HttpServletRequest request) {
 		String str=(String)request.getAttribute("d3");
@@ -80,7 +80,6 @@ public class SpController {
 		System.out.println(dd.getD2());
 		
 		return "final4";
-		
 	}
 	
 	@GetMapping("/t5")

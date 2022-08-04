@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>success</title>
 </head>
 <body>
-session1
+성공!!<br>
+
+${data.d1 }
+${data.d2 }
+
+
 </body>
 </html>
