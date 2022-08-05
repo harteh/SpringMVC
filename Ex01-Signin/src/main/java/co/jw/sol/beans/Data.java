@@ -6,25 +6,25 @@ import javax.validation.constraints.Size;
 public class Data {
 
 	@Size(min=3, max=10)
-	private String d1;
+	private String uId;
 	
-	@Max(100)
-	private int d2;
+	@Size(min=3, max=10)
+	private String pwd;
 
-	public String getD1() {
-		return d1;
+	public String getuId() {
+		return uId;
 	}
 
-	public void setD1(String d1) {
-		this.d1 = d1;
+	public void setuId(String uId) {
+		this.uId = uId;
 	}
 
-	public int getD2() {
-		return d2;
+	public String getPwd() {
+		return pwd;
 	}
 
-	public void setD2(int d2) {
-		this.d2 = d2;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-	
+
 }
