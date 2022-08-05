@@ -19,7 +19,6 @@
 <body>
 
 
-${sessionScope.uId}
 <div class="btn-set">
 	<p>${data.uId }님이 로그인 되었습니다</p><br><br><br>
 	
@@ -36,10 +35,11 @@ ${sessionScope.uId}
 	    Checked checkbox
 	  </label>
 	</div>
+	<br>	<br>	<br>
 
-
-	<a href="sign-in" class="w-100 btn btn-lg btn-primary">로그아웃</a><br><br>
-	<a href="secP" class="w-100 btn btn-lg btn-primary">비밀번호찾기</a><br><br>
+	<a href="login" class="w-100 btn btn-lg btn-primary">로그아웃</a><br><br>
+	<!-- 	<a href="myPage" class="w-100 btn btn-lg btn-primary">비밀번호찾기</a><br><br>	-->
+	<a href="secP" class="w-100 btn btn-lg btn-primary">비밀번호찾기</a><br> <br>
 	<a href="/" class="w-100 btn btn-lg btn-primary">첫화면으로</a><br>
 </div>
 

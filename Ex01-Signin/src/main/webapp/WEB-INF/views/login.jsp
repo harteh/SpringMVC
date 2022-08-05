@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인-로그인 폼</title>
+    <title>로그인 폼</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -31,17 +31,33 @@
 			margin-top: -1px;	overflow-x: auto;	text-align: center;
 			white-space: nowrap;	-webkit-overflow-scrolling: touch;	}
 		
-		.btn-set { width: 400px; margin: 100px auto; }
+		#loginForm { width: 400px; margin: 100px auto; }
 		.errMessage {color: red;}
     </style>
 </head>
 <body class="text-center">
-
-${sessionScope.uId}
+        
 <main class="form-signin w-100 m-auto">
-	<div class="btn-set">
-		<a href="in" class="w-100 btn btn-lg btn-primary">로그인</a><br><br>
-	</div>
-</main>
+      <%-- <form:form action="pro" modelAttribute="userData" method="post" id="loginForm"> --%>
+      <form:form action="pro" modelAttribute="data" method="post" id="loginForm">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+		<!-- 아이디 -->
+        <div class="form-floating">
+          <form:input path="uId" type="text" class="form-control" id="floatingInput" placeholder="ID" />
+          <label for="floatingInput">아이디</label>
+          <form:errors path="uId" class="errMessage" /><br>
+        </div>
+		<!-- 비밀번호 -->
+        <div class="form-floating">
+          <form:input path="pwd" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+          <label for="floatingPassword">비밀번호</label>
+          <form:errors path="pwd" class="errMessage"/><br>
+        </div><br>
+    
+        <form:button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</form:button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2022-08-05</p>
+      </form:form>
+    </main>    
 </body>
 </html>

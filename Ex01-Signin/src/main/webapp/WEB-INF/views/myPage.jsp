@@ -18,14 +18,13 @@
 </head>
 <body>
 
-${sessionScope.uId}
 <div class="btn-set">
 
 	<!-- 로그인 정보 -->
 	<ul class="list-group list-group-horizontal">
 	  <li class="list-group-item">회원 정보</li>
-	  <li class="list-group-item">${data.uId }</li>
-	  <li class="list-group-item">${data.pwd }</li>
+	  <li class="list-group-item">${sessionScope.uId}</li>
+	  <li class="list-group-item">${sessionScope.pwd}</li>
 	</ul>
 	
 	<!-- 선택한 상품정보 -->
@@ -36,7 +35,7 @@ ${sessionScope.uId}
 	</ul>
 	
 	<!-- 버튼 -->
-	<a href="sign-in" class="w-100 btn btn-lg btn-primary">로그아웃</a><br><br>
+	<a href="in" class="w-100 btn btn-lg btn-primary">로그아웃</a><br><br>
 	<a href="/" class="w-100 btn btn-lg btn-primary">첫화면으로</a><br>
 </div>
 
