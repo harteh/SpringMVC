@@ -21,7 +21,6 @@ public class SpController {
 	public String po(@Valid Data d, BindingResult r) {
 		if(r.hasErrors()) {
 			return "in";
-			//에러가 있으면 in 페이지로
 		}
 		return "success";
 	}

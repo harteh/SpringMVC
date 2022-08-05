@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JSR-index</title>
+<title>JSR2-index</title>
 </head>
 <body>
 
