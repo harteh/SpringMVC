@@ -7,10 +7,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>hasBindErrors</title>
 </head>
 <body>
-
  
  <form action="po" method="post">
  	d1:<input type="text" name="d1"><br>

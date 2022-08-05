@@ -38,10 +38,10 @@ public class SpController {
 				}
 				
 				//어노테이션이름.
-				if(codes[0].equals("Size.data1.d1")) {
+				if(codes[0].equals("Size.data.d1")) {
 					System.out.println("d1은 3~10글자를 쓸 수 있다");
 				}
-				else if(codes[1].equals("Max.data1.d2")) {
+				else if(codes[1].equals("Max.data.d2")) {
 					System.out.println("d2는 100보다 클 수 없다");
 				}
 			}//obj end
