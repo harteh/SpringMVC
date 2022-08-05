@@ -15,11 +15,11 @@
 <form:form action="po" modelAttribute="data" method="post">
 	d1: <form:input path="d1" type="text"/><br>
 		<form:errors path="d1" /><br><br>
+		
 	d2: <form:input path="d2" type="text"/><br>
-		<form:errors path="d2" /><br>
+		<form:errors path="d2" /><br><br>
 		
 	<form:button type="submit">제출</form:button>
-
 </form:form>
 
 </body>
