@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import co.jw.sol.beans.Data;
+import co.jw.sol.beans.FoodData;
 
 
 @Controller
@@ -23,14 +24,13 @@ public class SpController {
 	public String In(Model model) {
 		System.out.println("in...");
 		model.addAttribute("data", new Data());
+		
 		return "forward:/login";
 	}
 	@GetMapping("/login")
 	public String logIn(HttpServletRequest request) {
 		System.out.println("login...");
-
-		String str=(String)request.getAttribute("uId");
-		System.out.println("login: "+str);
+		/* String str=(String)request.getAttribute("uId");  System.out.println("login: "+str); */
 		
 		return "login";
 	}
@@ -39,11 +39,9 @@ public class SpController {
 	//로그인 성공하면 	//검증된 id와 pwd를 세션에 저장하고	//pdtPage로 이동 시킨다
 	//유효성 검사가 이루워진다
 	@PostMapping("/pro")
-	public String chk(HttpSession session, @Valid Data data, BindingResult r) {
+	public String chk(HttpSession session, Model model2, @Valid Data data, BindingResult r) {
 		System.out.println("pro...");
-		
-		String str=(String)data.getuId();
-		System.out.println("pro: "+str);
+		/* String str=(String)data.getuId(); System.out.println("pro: "+str); */
 		
 		if(r.hasErrors()) {
 			return "login";
@@ -51,37 +49,29 @@ public class SpController {
 		
 		session.setAttribute("uId", data.getuId());
 		session.setAttribute("pwd", data.getPwd());
+		session.setAttribute("uName", data.getuName());
+		session.setAttribute("uEmail", data.getuEmail());
 		
+		model2.addAttribute("foodData", new FoodData());
 		
 		return "pdtPage";
 	}
-//	@PostMapping("/pro")
-//	public String chk(@Valid Data data, BindingResult r) {
-//		System.out.println("pro...");
-//		
-//		String str=(String)data.getuId();
-//		System.out.println("myPage: "+str);
-//		
-//		if(r.hasErrors()) {
-//			return "login";
-//		}
-//		return "pdtPage";
-//	}
-
 	
-	//상품담기 클릭 하면 선택항목을 저장해서 
-	//myPage로 이동한다
-	@GetMapping("/secP")
-	public String secP(HttpSession session) {
+	//요리선택완료 클릭 하면 선택항목을 저장해서 	//myPage로 이동한다
+	@PostMapping("/secP")
+	public String secP(HttpSession session, FoodData foodData) {
 		System.out.println("secP...");
+		
+		session.setAttribute("allergy", foodData.getAllergy());
+		String str=(String)session.getAttribute("allergy"); System.out.println("myPage: "+str);
+		
+		
 		return "forward:/myPage";
 	}
-	@GetMapping("/myPage")
+	@PostMapping("/myPage")
 	public String myPage(HttpSession session) {
 		System.out.println("myPage...");
-		
-		String str=(String)session.getAttribute("uId");
-		System.out.println("myPage: "+str);
+		String str=(String)session.getAttribute("allergy"); System.out.println("myPage: "+str);
 		
 		return "myPage";
 	}

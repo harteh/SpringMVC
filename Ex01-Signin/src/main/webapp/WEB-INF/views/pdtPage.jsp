@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,38 +53,38 @@
 </head>
 <body>
 
+<form:form action="secP" modelAttribute="foodData" method="post">
 	<div class="btn-set">
 		<h2 class="text-center fw-bold">${data.uId }님,</h2>
 		<h2 class="text-center fw-bold">요리를 선택해 주세요</h2>
 
 		<div class="list-group mx-0 w-auto">
 			<label class="list-group-item d-flex gap-2">
-				<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1" value="" checked>
+				<form:radiobutton path="allergy" class="form-check-input flex-shrink-0" name="allergy" id="allergy1" value="y" />
 				<span>
-					알러지가 있습니다.
+					주의해야 할 알러지가 있습니다.
 					<small class="d-block text-muted">서버에게 알러지 항목을 알려주세요</small>
 				</span>
 				</label>
-				<label class="list-group-item d-flex gap-2">
-				<input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios2" value="">
+			<label class="list-group-item d-flex gap-2">
+				<form:radiobutton path="allergy" class="form-check-input flex-shrink-0" name="allergy" id="allergy2" value="n" checked="checked" />
 				<span>
 					알러지가 없습니다.
 					<small class="d-block text-muted">괜찮습니다</small>
 				</span>
-				</label>
-			</div>
+			</label>
+		</div>
 			<hr class="col-3 col-md-3 mb-5">
 		</div>
 	</div>
 
-	<!-- 그리드 적용 container > row > col -->
 	<div class="container mt-5"><div class="row">
 		
 		<!-- 전체요리(앙뜨레) 코스요리 선택  -->
 		<div class="list-group list-group-radio d-grid gap-2 border-0 w-auto  col">
 			<p>ENTREE (전체요리)</p>
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="entree" id="entree1" value="" checked>
+				<form:radiobutton path="entree" class="form-check-input position-absolute top-50 end-0 me-3 fs-5"  name="entree" id="entree1" value="" checked="checked" />
 				<label class="list-group-item py-3 pe-5" for="entree1">
 					<strong class="fw-semibold">Pan seared calmari and smoked paprika sauce</strong>
 					<span class="d-block small opacity-75">대포오징어 필렛, 피망, 훈제 파프리카, 오이피클, 마늘, 허브</span>
@@ -88,7 +92,7 @@
 			</div>
 
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="entree" id="entree2" value="">
+				<form:radiobutton path="entree" class="form-check-input position-absolute top-50 end-0 me-3 fs-5"  name="entree" id="entree2" value="" />
 				<label class="list-group-item py-3 pe-5" for="entree2">
 					<strong class="fw-semibold">Fish gratin with salmon roe</strong>
 					<span class="d-block small opacity-75">베샤멜소스, 대구살, 연어알, 크루통, 허브</span>
@@ -96,7 +100,7 @@
 			</div>
 
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="entree" id="entree3" value="">
+				<form:radiobutton path="entree" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="entree" id="entree3" value="" />
 				<label class="list-group-item py-3 pe-5" for="entree3">
 					<strong class="fw-semibold">Poached egg & Grilled leek, Blue cheese</strong>
 					<span class="d-block small opacity-75">대파, 수란, 블루치즈, 베이컨, 허브 수제 마요네즈</span>
@@ -107,7 +111,7 @@
 		<div class="list-group list-group-radio d-grid gap-2 border-0 w-auto  col">
 			<p>PLAT (메인요리)</p>
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="plat" id="plat1" value="" checked>
+				<form:radiobutton path="plat" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="plat" id="plat1" value="" checked="checked" />
 				<label class="list-group-item py-3 pe-5" for="plat1">
 					<strong class="fw-semibold">Magnet de Canard</strong>
 					<span class="d-block small opacity-75">오리가슴살, 구운 고구마, 레드와인 소스, 그릴드 새송이 버섯</span>
@@ -115,7 +119,7 @@
 			</div>
 
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="plat" id="plat2" value="">
+				<form:radiobutton path="plat" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="plat" id="plat2" value="" />
 				<label class="list-group-item py-3 pe-5" for="plat2">
 					<strong class="fw-semibold">Today's fish</strong>
 					<span class="d-block small opacity-75">신선한 제철 생선요리, 서버에게 문의해 주세요</span>
@@ -123,7 +127,7 @@
 			</div>
 
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="plat" id="plat3" value="">
+				<form:radiobutton path="plat" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="plat" id="plat3" value="" />
 				<label class="list-group-item py-3 pe-5" for="plat3">
 					<strong class="fw-semibold">Cotes d'agneau</strong>
 					<span class="d-block small opacity-75">어린 양갈비, 감자무슬린, 구운 아채, 레드와인 소스, 쏘렐</span>
@@ -134,32 +138,33 @@
 		<div class="list-group list-group-radio d-grid gap-2 border-0 w-auto  col">
 			<p>DESSERT</p>
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid1" value="" checked>
-				<label class="list-group-item py-3 pe-5" for="listGroupRadioGrid1">
+				<form:radiobutton path="dessert" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="dessert" id="dessert1" value="Ch" checked="checked" />
+				<label class="list-group-item py-3 pe-5" for="dessert1">
 					<strong class="fw-semibold">Chocolate Cake with Lime Cream (Gluten free)</strong>
 					<span class="d-block small opacity-75">초콜릿 케이크(밀가루를 넣지 않은), 라임크림</span>
 				</label>
 			</div>
 
 			<div class="position-relative">
-				<input class="form-check-input position-absolute top-50 end-0 me-3 fs-5" type="radio" name="listGroupRadioGrid" id="listGroupRadioGrid2" value="">
-				<label class="list-group-item py-3 pe-5" for="listGroupRadioGrid2">
+				<form:radiobutton path="dessert" class="form-check-input position-absolute top-50 end-0 me-3 fs-5" name="dessert" id="dessert2" value="St" />
+				<label class="list-group-item py-3 pe-5" for="dessert2">
 					<strong class="fw-semibold">Strawberry and Raspberry Cream</strong>
 					<span class="d-block small opacity-75">딸리, 크럼블, 라즈베리 크림</span>
 				</label>
 			</div>
 		</div>
 
-
+		</div>
 	</div>
-</div>
 
 	<div class="container w-50 h-100 mb-5 mt-5"><div class="row">
 	<!-- 이동 버튼 세트 -->
-		<a href="secP" class="w-100 h-50 btn btn-lg btn-primary col me-3 ">선택완료</a><br> <br>
-		<a href="login" class="w-100 h-50 btn btn-lg btn-outline-primary col me-3">로그아웃</a><br><br>
-		<a href="/" class="w-100 h-50 btn btn-lg btn-outline-primary col me-3">처음으로</a><br>
+		<a href="login" class="w-100 h-50 btn btn-lg btn-outline-primary col me-3">로그아웃</a>
+		<a href="/" class="w-100 h-50 btn btn-lg btn-outline-primary col me-3">처음으로</a>
+		<form:button type="submit" class="w-100 h-50 btn btn-lg btn-primary col me-3 ">선택완료</form:button>
 	</div></div>
+
+</form:form>
 
 </body>
 </html>

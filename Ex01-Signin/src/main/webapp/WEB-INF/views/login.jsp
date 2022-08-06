@@ -45,7 +45,19 @@
           <form:input path="pwd" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
           <label for="floatingPassword">비밀번호</label>
           <form:errors path="pwd" class="errMessage"/><br>
-        </div><br>
+        </div>
+		<!-- 이름 -->
+        <div class="form-floating">
+          <form:input path="uName" type="text" class="form-control" id="floatingPassword" placeholder="Name" />
+          <label for="floatingPassword">성함</label>
+          <form:errors path="uName" class="errMessage"/><br>
+        </div>
+		<!-- 메일 -->
+        <div class="form-floating">
+          <form:input path="uEmail" type="email" class="form-control" id="floatingPassword" placeholder="Email" />
+          <label for="floatingPassword">이메일</label>
+          <form:errors path="uEmail" class="errMessage"/><br>
+        </div>
     
         <form:button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</form:button>
         <p class="mt-5 mb-3 text-muted">&copy; 2022-08-05</p>

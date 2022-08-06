@@ -29,9 +29,9 @@
 		</header>
 	
 		<main>
-		<h1>{sessionScope.uName }님</h1>
+		<h1>${sessionScope.uName }님</h1>
 		<p class="fs-5 col-md-8">입력하신 정보를 확인하세요<br>
-			메일: {sessionScope.uEmail } 아이디: ${sessionScope.uId } 비밀번호: ${sessionScope.pwd }</p>
+			메일: ${sessionScope.uEmail } 아이디: ${sessionScope.uId } 비밀번호: ${sessionScope.pwd }</p>
 	
 		<div class="mb-5">
 			<a href="in" class="btn btn-primary btn-lg px-4">로그아웃</a>
