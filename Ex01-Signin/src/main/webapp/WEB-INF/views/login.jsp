@@ -59,7 +59,7 @@
           <form:errors path="uEmail" class="errMessage"/><br>
         </div>
     
-        <form:button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</form:button>
+        <form:button class="w-100 btn btn-lg btn-warning" type="submit">Sign in</form:button>
         <p class="mt-5 mb-3 text-muted">&copy; 2022-08-05</p>
       </form:form>
     </main>    

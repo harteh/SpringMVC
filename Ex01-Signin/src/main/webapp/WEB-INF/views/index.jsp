@@ -37,7 +37,7 @@ ${sessionScope.uId}
 		<img class="mb-4 mt-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR18EnnuLn8XDU7d0-Xrpn_Rz6vd51hf0MBQNftF2HaZowmRxRrB9H5OVuDl6i8mkEw__Y&usqp=CAU" 
 			alt="" width="222" height="227">
 
-		<a href="in" class="w-100 btn btn-lg btn-primary">로그인</a><br><br>
+		<a href="in" class="w-100 btn btn-lg btn-warning">로그인</a><br><br>
 	</div>
 </main>
 </body>

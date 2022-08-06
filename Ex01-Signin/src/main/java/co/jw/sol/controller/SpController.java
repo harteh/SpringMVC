@@ -63,7 +63,10 @@ public class SpController {
 		System.out.println("secP...");
 		
 		session.setAttribute("allergy", foodData.getAllergy());
-		String str=(String)session.getAttribute("allergy"); System.out.println("myPage: "+str);
+		session.setAttribute("entree", foodData.getEntree());
+		session.setAttribute("plat", foodData.getPlat());
+		session.setAttribute("dessert", foodData.getDessert());
+		/* String str=(String)session.getAttribute("allergy"); System.out.println("secP: "+str); */
 		
 		
 		return "forward:/myPage";
@@ -71,7 +74,7 @@ public class SpController {
 	@PostMapping("/myPage")
 	public String myPage(HttpSession session) {
 		System.out.println("myPage...");
-		String str=(String)session.getAttribute("allergy"); System.out.println("myPage: "+str);
+		/* String str=(String)session.getAttribute("allergy"); System.out.println("myPage: "+str); */
 		
 		return "myPage";
 	}
