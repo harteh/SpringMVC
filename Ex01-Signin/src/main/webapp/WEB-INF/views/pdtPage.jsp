@@ -55,7 +55,7 @@
 
 <form:form action="secP" modelAttribute="foodData" method="post">
 	<div class="btn-set">
-		<h2 class="text-center fw-bold">${data.uId }님,</h2>
+		<h2 class="text-center fw-bold">${data.uName }님,</h2>
 		<h2 class="text-center fw-bold">요리를 선택해 주세요</h2>
 
 		<div class="list-group mx-0 w-auto">
