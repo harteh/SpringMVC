@@ -34,7 +34,8 @@ public class SpController {
 		session2.setD1("cc");
 		session2.setD2("dd");
 		
-		return "t5";
+//		return "t5";
+		return "final5";
 	}
 	
 	@GetMapping("/final5")
@@ -47,6 +48,17 @@ public class SpController {
 		System.out.println(session2.getD1());
 		System.out.println(session2.getD2());
 		return "final5";
+	}
+	
+	@GetMapping("/etc5")
+	public String resultEtc5(@ModelAttribute("session1") Data session1,
+			  @ModelAttribute("session2") Data session2) {
+		
+		/*
+		 * System.out.println(session1.getD1()); System.out.println(session1.getD2());
+		 * System.out.println(session2.getD1()); System.out.println(session2.getD2());
+		 */
+		return "etc5";
 	}
 	
 	

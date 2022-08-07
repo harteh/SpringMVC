@@ -9,11 +9,5 @@ import co.jw.sol.beans.Data;
 @Configuration
 public class RootAppContext {
 	
-	//세션 쓸수있나?
-	@Bean(name="userData")
-	@SessionScope
-	public Data data() {
-		return new Data();
-	}
 	
 }

@@ -16,7 +16,6 @@ import co.jw.sol.beans.FoodData;
 
 
 @Controller
-@SessionAttributes({"session1"})
 public class SpController {
 	
 	//인덱스페이지에서 로그인 버튼 클릭 시 로그인 폼이 있는 화면으로 이동한다

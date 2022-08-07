@@ -3,9 +3,8 @@
 세션을 이용한 데이터 유지 구현  
 
 [구현 화면]
-<img src="~@source/Ex01-Signin/image/select_course.gif" width="70%"	/>
-<img src="/Ex01-Signin/image/select_course.gif" width="70%"	/>
-<img src="/image/select_course.gif" width="70%"	/>
+<img src="/Ex01-Signin/image/select_course.gif" width="70%"	/>.  
+<img src="/image/select_course.gif" width="70%"	/>..  
 
 
 
