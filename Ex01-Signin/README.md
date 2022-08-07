@@ -4,6 +4,8 @@
 
 [구현 화면]
 <img src="~@source/Ex01-Signin/image/select_course.gif" width="70%"	/>
+<img src="/Ex01-Signin/image/select_course.gif" width="70%"	/>
+<img src="/image/select_course.gif" width="70%"	/>
 
 
 
