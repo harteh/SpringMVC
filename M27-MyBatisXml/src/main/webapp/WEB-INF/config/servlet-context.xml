@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+   xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:beans="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="http://www.springframework.org/schema/mvc">
+
+   <!-- 패키지 내부 클래스 중 controller가지고 있는 클래스 로딩 -->
+   <annotation-driven />
+   <context:component-scan
+      base-package="co.jw.sol.controller" />
+
+   <!-- controller메소드에서 반환하는 문자열 앞 뒤에 붙힐 경로정보 세팅 -->
+   <beans:bean
+      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <beans:property name="prefix" value="/WEB-INF/views/" />
+      <beans:property name="suffix" value=".jsp" />
+   </beans:bean>
+
+   <resources location="/resources/" mapping="/**" />
+
+
+<!-- 추가 -->
+   <beans:bean
+      class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <beans:property name="location">
+         <beans:value>/WEB-INF/properties/db.properties</beans:value>
+      </beans:property>
+   </beans:bean>
+
+   <beans:bean class="org.apache.commons.dbcp2.BasicDataSource"
+      id="basic_data_source">
+      <beans:property name="driverClassName"
+         value="${db.classname}"></beans:property>
+      <beans:property name="url" value="${db.url}"></beans:property>
+      <beans:property name="username" value="${db.username}"></beans:property>
+      <beans:property name="password" value="${db.password}"></beans:property>
+   </beans:bean>
+
+
+   <beans:bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSession">
+      <beans:property name="dataSource" ref="basic_data_source" />
+      <beans:property value="/WEB-INF/mapper/*.xml"
+         name="mapperLocations" />
+   </beans:bean>
+
+   <beans:bean class="org.mybatis.spring.SqlSessionTemplate"
+      id="sqlSessionTemplate">
+      <beans:constructor-arg ref="sqlSession"
+         index="0" />
+   </beans:bean>
+</beans:beans>

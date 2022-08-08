@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test_db">
+	<insert parameterType="co.jw.sol.beans.Data" id="in_sert">
+		<![CDATA[[
+			insert into mvc(d1, d2, d3) values (#{d1}, #{d2}, #{d3})
+		]]>
+	</insert>
+	
+	<select id="sel" resultType="co.jw.sol.beans.Data">
+		<![CDATA[[
+			select d1, d2, d3 from mvc
+		]]>
+	</select>
+	
+</mapper>
