@@ -22,8 +22,7 @@
 
 
 <!-- 추가 -->
-   <beans:bean
-      class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+   <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
       <beans:property name="location">
          <beans:value>/WEB-INF/properties/db.properties</beans:value>
       </beans:property>
@@ -31,23 +30,20 @@
 
    <beans:bean class="org.apache.commons.dbcp2.BasicDataSource"
       id="basic_data_source">
-      <beans:property name="driverClassName"
-         value="${db.classname}"></beans:property>
+      <beans:property name="driverClassName" value="${db.classname}"></beans:property>
       <beans:property name="url" value="${db.url}"></beans:property>
       <beans:property name="username" value="${db.username}"></beans:property>
       <beans:property name="password" value="${db.password}"></beans:property>
    </beans:bean>
 
-
    <beans:bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSession">
       <beans:property name="dataSource" ref="basic_data_source" />
-      <beans:property value="/WEB-INF/mapper/*.xml"
-         name="mapperLocations" />
+      <beans:property value="/WEB-INF/mapper/*.xml" name="mapperLocations" />
    </beans:bean>
 
-   <beans:bean class="org.mybatis.spring.SqlSessionTemplate"
-      id="sqlSessionTemplate">
-      <beans:constructor-arg ref="sqlSession"
-         index="0" />
+   <beans:bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">
+      <beans:constructor-arg ref="sqlSession" index="0" />
    </beans:bean>
+   
+   
 </beans:beans>
