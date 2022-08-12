@@ -1,0 +1,5 @@
+@charset "UTF-8";
+/* 개별설정 css */
+.errMessage {color: red;}
+.btn-set { width: 400px; margin: 100px auto; }
+.margin-set { width: 500px; margin: 70px auto 30px; }

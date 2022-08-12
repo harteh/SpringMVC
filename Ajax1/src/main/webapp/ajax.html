@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax1</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	function getText() {
+		$.ajax({
+			url:"data.txt",
+			type:"post",
+			dataType:"text",
+			success:function(rec_data){
+				$("#result").text(rec_data);
+			}
+		});
+	}
+	
+	function getHtml() {
+		$.ajax({
+			url:"data2.html",
+			type:"post",
+			dataType:"html",
+			success:function(re){
+				$("#result").html(re);
+			}
+		});
+	}
+	
+	function getXml() {
+		$.ajax({
+			url:"data3.xml",
+			type:"post",
+			dataType:"xml",
+			success:function(reXml){
+				var data=$(reXml).find("data");
+				
+				$(data).each(function(idx, obj){
+					var food1=$(obj).find("food1");
+					var food2=$(obj).find("food2");
+					
+					var food11=$(food1).text();
+					var food22=$(food2).text();
+					
+					$("#result").append(food11 + "<br>");
+					$("#result").append(food22 + "<br>");
+				})
+			}
+		});
+	}
+	
+	function getJson() {
+		$.ajax({
+			url:"data4.json",
+			type:"post",
+			dataType:"json",
+			success:function(re){
+				$("#result").append(re.data1 +"<br>");
+				$("#result").append(re.data2 +"<br>");
+				$("#result").append(re.data3 +"<br>");
+			}
+		});
+	}
+
+</script>
+
+</head>
+<body>
+
+<button onclick="getText()">문자열</button>
+<button onclick="getHtml()">html</button>
+<button onclick="getXml()">xml</button>
+<button onclick="getJson()">json</button>
+<br><hr>
+<div id="result"></div>
+
+
+</body>
+</html>
