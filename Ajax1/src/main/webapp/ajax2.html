@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax2</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	function on() {
+		var n = $("#a1").val();
+		alert(n);
+	}
+	function on2() {
+		var n = $("#a1").val("세종대왕");
+	}
+</script>
+
+
+</head>
+<body>
+
+<input type="text" id="a1"><br>
+<button onclick="on()">value 가져오기</button>
+<button onclick="on2()">value 세팅</button><br>
+
+</body>
+</html>

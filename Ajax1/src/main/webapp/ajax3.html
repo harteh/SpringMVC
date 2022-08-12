@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax3</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var ary=[
+			{name:'세종', addr:'서울'},
+			{name:'정도전', addr:'인천'},
+			{name:'이순신', addr:'부산'}
+		];
+		
+		$.each(ary, function(index, item){
+			var result="";
+			result +='<h2>'+item.name+'</h2>';
+			result +='<h2>'+item.addr+'</h2>';
+			
+			document.body.innerHTML+=result;
+		})
+		
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

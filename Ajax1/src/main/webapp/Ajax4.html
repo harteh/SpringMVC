@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.aa0{ color: gold;}
+	.aa1{ background-color: teal; color: #fff;}
+	.aa2{ background-color: aliceblue;}
+</style>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('h2').each(function(index, item) {
+			$(item).addClass('aa'+index);
+		})
+	})
+
+</script>
+</head>
+<body>
+
+<h2>세종</h2>
+<h2>세조</h2>
+<h2>정종</h2>
+
+</body>
+</html>
